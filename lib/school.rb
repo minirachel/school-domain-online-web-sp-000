@@ -28,7 +28,7 @@ class School
   end
 
   def sort
-    @roster.each_value do {|x| x.sort!}
+    @roster.map do {|k,v| @roster[k] = v.sort}
   end
 end
 
