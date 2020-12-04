@@ -1,7 +1,7 @@
 require 'pry'
 
 class School
-  attr_accessor :roster, :student, :grade_level
+  attr_accessor :roster, :student, :grade
   attr_reader :name
 
   def initialize(name)
@@ -9,26 +9,26 @@ class School
     @roster = {}
   end
 
-  def add_student(student, grade_level)
+  def add_student(student, grade)
     #create a new array equal to the incoming new key
     #currently resets the grade to an empty array
 
-    if @roster.include?(grade_level)
-        @roster[grade_level] << student
+    if @roster.include?(grade)
+        @roster[grade] << student
 
     else
       #push the new value to the newly made key array
-        @roster[grade_level] = []
-        @roster[grade_level] << student
+        @roster[grade] = []
+        @roster[grade] << student
     end
   end
 
-  def grade(grade_level)
-    @roster[grade_level]
+  def grade(grade)
+    @roster[grade]
   end
 
-  def sort(grade_level)
-    @roster[grade_level].sort
+  def sort(grade)
+    grade.sort
   end
 end
 
