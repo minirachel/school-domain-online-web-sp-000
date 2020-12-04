@@ -28,7 +28,7 @@ class School
   end
 
   def sort(grade)
-    grade.sort
+    grade.sort_by(&:student)
   end
 end
 
